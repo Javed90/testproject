@@ -1,0 +1,23 @@
+<h1> Welome Admin !</h1>
+<table class="table table-striped" *ngIf="newData">
+    <thead>
+      <tr>
+        <th scope="col">Main Property Type</th>
+        <th scope="col">Sub Property Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let d of newData">
+        <th scope="row">
+            Main Type : {{d.title}}
+        </th>
+        <td >
+            <ul>
+                <li *ngFor="let u of d.data">
+                        {{u | dataPipe}}
+                </li>
+            </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
